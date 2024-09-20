@@ -86,7 +86,7 @@ else
     local url = getgenv().webhookexecUrl
 
     local data = {
-        ["content"] = "@everyone",
+        ["content"] = "",
         ["embeds"] = {
             {
                 ["title"] = "🚀 **Script Execution Detected | Exec Log**",
@@ -211,3 +211,5 @@ else
     }
     request = http_request or request or (syn and syn.request) or (fluxus and fluxus.request) or (http and http.request)
     local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+end
